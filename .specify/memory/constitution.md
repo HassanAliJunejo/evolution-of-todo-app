@@ -1,55 +1,74 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- SYNC IMPACT REPORT
+Version change: N/A (initial creation) → 1.0.0
+Modified principles: N/A
+Added sections: All principles and sections (initial constitution)
+Removed sections: N/A
+Templates requiring updates:
+  - .specify/templates/plan-template.md: ✅ reviewed for constitution alignment
+  - .specify/templates/spec-template.md: ✅ reviewed for constitution alignment
+  - .specify/templates/tasks-template.md: ✅ reviewed for constitution alignment
+Follow-up TODOs: None
+-->
+# The Evolution of Todo - Phase I: Todo In-Memory Python Console App Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Spec-First Development
+Every feature and change must be specified before implementation. Specifications must precede code, be versioned in the /specs_history folder, and cover requirements, edge cases, and examples. This ensures clear understanding and prevents scope creep.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Python Console Application
+The application must be a command-line interface (CLI) console application built in Python. It should follow text-in/text-out protocols: user input via stdin/args → output via stdout, errors via stderr. Support both human-readable and structured formats where appropriate.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-First (NON-NEGOTIABLE)
+Test-driven development (TDD) is mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced. All functionality must have corresponding unit tests before being considered complete.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. In-Memory Data Management
+All todo data must be managed in-memory during the application session. No persistent storage is required for Phase I. Data will be lost when the application terminates, which is acceptable for this phase.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Clean Code Standards
+Code must adhere to PEP 8 standards, be modular with clear separation of concerns, include comprehensive docstrings, and implement proper error handling. The codebase should be maintainable, readable, and follow Python best practices.
 
-### [PRINCIPLE_6_NAME]
+### VI. Minimal Dependencies
+The application should have minimal external dependencies. Only use external libraries when absolutely necessary. Prefer standard library solutions where possible to keep the application lightweight and reduce potential security vulnerabilities.
 
+## Additional Constraints
 
-[PRINCIPLE__DESCRIPTION]
+### Technology Stack
+- Language: Python 3.13+
+- Dependency Management: UV
+- Structure: /src for source code, /tests for test files, /specs_history for specifications
+- No external databases or services required for Phase I
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### Feature Requirements
+- Add new todo items with descriptions
+- Delete existing todo items
+- Update/edit existing todo items
+- View all todo items with status indicators
+- Mark todo items as complete/incomplete
+- Basic error handling and user feedback
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Development Workflow
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Spec Creation and Management
+- All specifications must be created in Markdown or YAML format
+- Specifications should be versioned in the /specs_history folder (e.g., spec_v1.md)
+- Specifications must cover requirements, edge cases, and usage examples
+- Iterate on specifications in the /specs_history folder before implementation
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### AI Assistance Guidelines
+- Use AI (e.g., Qwen) for generating code from specifications
+- Follow prompt templates for spec refinement and code generation
+- AI-generated code must still meet all constitution requirements
+- Human review required for all AI-generated code before acceptance
+
+### Quality Gates
+- All code must pass linting checks (PEP 8 compliance)
+- All tests must pass before merging
+- Code review required for all pull requests
+- Specifications must be updated if implementation deviates from original plan
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other development practices for this project. Amendments require proper documentation, approval, and migration planning. All pull requests and code reviews must verify compliance with these principles. Complexity must be justified with clear benefits to the project.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-01-01 | **Last Amended**: 2025-01-01
